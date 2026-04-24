@@ -1,7 +1,7 @@
 # Software Design Document (SDD)
 
-## Architecture
-Мікросервісна архітектура
+## Architecture Style
+Мікросервісна архітектура.
 
 ## Components
 
@@ -9,7 +9,13 @@
 - Log Service
 - Metrics Service
 - Alert Service
+- Storage Service
 
 ## Communication
 
-REST + Message Broker
+- REST API (synchronous)
+- Message Broker (asynchronous)
+
+## Data Flow
+
+Logs → Log Service → Storage → Analytics → Alerts
