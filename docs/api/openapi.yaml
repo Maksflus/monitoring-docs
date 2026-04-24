@@ -1,1 +1,96 @@
+openapi: 3.0.0
+info:
+  title: Monitoring / Ticket Booking API
+  description: API контракт для системи моніторингу/бронювання квитків
+  version: 1.0.0
 
+servers:
+  - url: http://localhost:8080
+
+paths:
+  /api/orders:
+    post:
+      summary: Create order
+      description: Створення нового замовлення (бронювання)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderRequest'
+      responses:
+        '201':
+          description: Order created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResponse'
+
+    get:
+      summary: Get all orders
+      responses:
+        '200':
+          description: List of orders
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrderResponse'
+
+  /api/orders/{id}:
+    get:
+      summary: Get order by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Order found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResponse'
+        '404':
+          description: Order not found
+
+    delete:
+      summary: Delete order
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Order deleted
+
+components:
+  schemas:
+    OrderRequest:
+      type: object
+      required:
+        - userId
+        - items
+      properties:
+        userId:
+          type: string
+        items:
+          type: array
+          items:
+            type: string
+
+    OrderResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        userId:
+          type: string
+        status:
+          type: string
+          example: "created"
