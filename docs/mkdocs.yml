@@ -6,11 +6,16 @@ nav:
       - SSD: architecture/SSD.md
       - SDD: architecture/SDD.md
       - ISD: architecture/ISD.md
+  - API:
+      - Overview: api/README.md
+      - OpenAPI: api/openapi.yaml
   - Quality:
       - Test Strategy: quality/test-strategy.md
-      - Traceability Matrix: quality/traceability-matrix.md
+      - Traceability: quality/traceability-matrix.md
   - Developer:
       - Onboarding: developer/onboarding.md
-
-theme:
-  name: material
+  - UI:
+      - Components: ui/components.md
+      - Storybook: ui/storybook.md
+  - CI/CD: ci-cd-docs.md
+  - DoD: definition-of-done.md
