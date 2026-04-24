@@ -1,16 +1,19 @@
 # Infrastructure Specification Document (ISD)
 
-## Deployment
-
-- Docker
-- Kubernetes
+## Deployment Environment
+Cloud-based infrastructure (AWS/GCP)
 
 ## Components
 
+- Kubernetes Cluster
+- Docker containers
 - Load Balancer
-- PostgreSQL
-- Redis
+- PostgreSQL cluster
+- Redis cache
+- Message Broker (Kafka/RabbitMQ)
 
-## Scaling
+## Scaling Strategy
 
-Horizontal scaling via Kubernetes
+- Horizontal Pod Autoscaling
+- Read replicas for database
+- CDN for static content
