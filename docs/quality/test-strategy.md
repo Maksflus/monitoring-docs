@@ -1,11 +1,12 @@
 # Test Strategy
 
-## Types
+## Testing Levels
 
-- Unit testing
-- Integration testing
-- API testing
-- Load testing
+- Unit Testing
+- Integration Testing
+- API Testing
+- Load Testing
+- Security Testing
 
 ## Goal
-Забезпечення якості системи
+Забезпечення стабільності, продуктивності та безпеки системи моніторингу.
